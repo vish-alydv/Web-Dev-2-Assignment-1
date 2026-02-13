@@ -38,6 +38,7 @@ eventForm.addEventListener("submit", (event) => {
 
 function createEventCard(eventData) {
     const card = document.createElement("div");
+    card
 
     card.innerHTML = `
         <button class="delete-btn">X</button>
@@ -56,3 +57,33 @@ function addEvent(eventData) {
 
     eventContainer.appendChild(createEventCard(eventData));
 }
+
+Function.add
+
+clearAllBtn.addEventListener("click" ,() => {
+    eventContainer.innerHTML = `
+    <div class = "empty-state"> No Events Yet. Add your First Event! </div>`
+    
+})
+
+addSampleBtn.addEventListener("click" , ()=> {
+    sampleEvents.forEach(addEvent);
+})
+
+
+eventContainer.addEventListener("click", (event) => {
+    const card = event.target.closest('.event-card'); //event-card
+    console.log(card, "inside line 73");
+
+    if (event.target.classList.contains("delete-btn")) {
+        card.remove()
+    }
+
+    if (!eventContainer.querySelector(".event-card")) {
+        eventContainer.innerHTML = `
+            <div class="empty-state">
+                No events yet. Add your first event!
+            </div>`
+    }
+
+})
