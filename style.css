@@ -1,1 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #4facfe, #00c6ff);
+    padding: 40px;
+}
+
+/* Main Title */
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* Section Titles */
+h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+/* Form Styling */
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #6a5acd;
+    box-shadow: 0 0 5px rgba(106, 90, 205, 0.4);
+}
+
+/* Buttons */
+button {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(90deg, #6a5acd, #836fff);
+    transition: 0.3s ease;
+    margin-right: 10px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+}
+
+/* Events Section */
+#eventContainer {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Event Card */
+.event-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-card h3 {
+    color: #4b3fcf;
+    margin-bottom: 8px;
+}
+
+.event-card span {
+    display: inline-block;
+    background: #e0e7ff;
+    color: #4b3fcf;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.event-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Delete Button */
+.delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: crimson;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.delete-btn:hover {
+    background: darkred;
+}
+
+/* Empty State */
+.empty-state {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    color: #666;
+    grid-column: 1 / -1;
+}
+
+/* DOM Demo */
+#demoContent {
+    margin-top: 15px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    form {
+        padding: 20px;
+    }
+}
 
