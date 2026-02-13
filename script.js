@@ -28,7 +28,7 @@ eventForm.addEventListener("submit", (event) => {
 
     const eventData = {
         title: eventTitle.value,
-        date: eventDate.value,  
+        date: eventDate.value,
         category: eventCategory.value,
         description: eventDescription.value
     };
@@ -38,7 +38,7 @@ eventForm.addEventListener("submit", (event) => {
 
 function createEventCard(eventData) {
     const card = document.createElement("div");
-    card
+    card.classList.add("event-card");   // FIXED
 
     card.innerHTML = `
         <button class="delete-btn">X</button>
@@ -53,30 +53,19 @@ function createEventCard(eventData) {
 
 function addEvent(eventData) {
     const emptyState = document.querySelector(".empty-state");
-    emptyState.remove();
+    if (emptyState) emptyState.remove();  // FIXED
 
     eventContainer.appendChild(createEventCard(eventData));
 }
 
-Function.add
-
-clearAllBtn.addEventListener("click" ,() => {
-    eventContainer.innerHTML = `
-    <div class = "empty-state"> No Events Yet. Add your First Event! </div>`
-    
-})
-
-addSampleBtn.addEventListener("click" , ()=> {
-    sampleEvents.forEach(addEvent);
-})
-
+clearAllBtn.addEventListener("click", () => {
+    eventContainer.innerHTML = `<div class="empty-state">No events yet. Add your first event!</div>`; // FIXED
+});
 
 eventContainer.addEventListener("click", (event) => {
-    const card = event.target.closest('.event-card'); //event-card
-    console.log(card, "inside line 73");
-
     if (event.target.classList.contains("delete-btn")) {
-        card.remove()
+        const card = event.target.closest(".event-card"); // FIXED
+        if (card) card.remove();
     }
 
     if (!eventContainer.querySelector(".event-card")) {
@@ -86,4 +75,11 @@ eventContainer.addEventListener("click", (event) => {
             </div>`
     }
 
-})
+});
+
+
+addSampleBtn.addEventListener("click", () => {
+    sampleEvent.forEach(event => {
+        addEvent(event);
+    });
+});
